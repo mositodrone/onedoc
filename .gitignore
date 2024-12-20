@@ -44,4 +44,4 @@ next-env.d.ts
 .env.sentry-build-plugin
 
 # Liveblocks secret key
-/lib/livebocks.ts
+/lib/liveblocks.ts
