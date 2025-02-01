@@ -31,7 +31,11 @@ const ShareModal = ({ roomId, collaborators, creatorId,currentUserType }: ShareD
   const shareDocumentHandler = async () => {
     setLoading(true)
 
-    await updateDocumentAccess({ roomId, email, userType: userType as UserType, updatedBy: user.info })
+    try {
+      await updateDocumentAccess({ roomId, email, userType: userType as UserType, updatedBy: user.info })
+    } catch (error) {
+      alert(`An error occured when trying to add user to project ${error}`)
+    }
 
     setLoading(false)
   }
